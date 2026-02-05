@@ -18,12 +18,68 @@ An AI-powered compliance assessment tool that:
 - **Recommends** specific compliance actions and timelines
 - **Generates** professional compliance reports for stakeholders
 
-## 🚀 Quick Start
+## ⚡ Quick Start (5 Minutes)
+
+### 🎬 Try It Now
+```bash
+# 1. Clone and enter directory
+git clone https://github.com/Ksushik/eu-ai-act-bot
+cd eu-ai-act-bot
+
+# 2. Quick install (Python 3.11+ required)
+pip install -r requirements.txt
+
+# 3. Start the API server
+python -m uvicorn backend.main:app --port 8000
+
+# 4. Test with a sample AI system
+curl -X POST http://localhost:8000/api/analyze \
+  -H "Content-Type: application/json" \
+  -d '{
+    "description": "AI chatbot that answers customer questions and provides product recommendations", 
+    "domain": "customer_service",
+    "processes_personal_data": false,
+    "automated_decision_making": false
+  }'
+
+# 5. View results - you'll get compliance assessment + action plan!
+```
+
+**🎉 That's it!** You now have EU AI Act compliance assessment running locally.
+
+### 📊 Example Response
+```json
+{
+  "risk_category": "LIMITED_RISK",
+  "requirements": ["AI disclosure to users"],
+  "action_plan": {
+    "immediate": ["Add 'You are chatting with AI' notice"],
+    "estimated_cost": "€5,000-15,000",
+    "timeline": "2 weeks"
+  },
+  "compliance_score": 70
+}
+```
+
+### 🏢 Business Example
+```bash
+# Test with a hiring AI (High Risk)
+curl -X POST http://localhost:8000/api/analyze \
+  -H "Content-Type: application/json" \
+  -d '{
+    "description": "AI system that screens resumes and ranks candidates for hiring decisions",
+    "domain": "employment", 
+    "processes_personal_data": true,
+    "automated_decision_making": true
+  }'
+```
+
+## 🚀 Full Setup
 
 ### Prerequisites
 - Python 3.11+
 - Node.js 18+
-- Anthropic Claude API key
+- Anthropic Claude API key (optional - for enhanced analysis)
 
 ### Backend Setup
 ```bash
